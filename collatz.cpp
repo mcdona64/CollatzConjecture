@@ -32,7 +32,7 @@ int collatz(int start, int end) {
 
 int main(int argc, char* argv[]) {
 	//make sure that there was the correct numbers entered
-	if (argc < 3) {
+	if (argc < 4) {
 		printf("ussage error type the range of numbers you want to check");
 		return 0;
 	}
