@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
 int main(int argc, char* argv[]) {
 	//make sure that there was the correct numbers entered
@@ -13,12 +15,25 @@ int main(int argc, char* argv[]) {
 	
 	//make nessicarly local variables 
 	int start = atoi(argv[1]);
-	double n = (double)start;
 	int end = atoi(argv[2]);
 	clock_t sclock, eclock;
+	int status;
 
 	//start the clock to time the program
 	sclock = clock();
+	int pid = fork();
+
+	//devide the work into two threads
+	if (pid == 0) {
+		end = end / 2;
+		
+	} else {
+		start = end / 2;
+	}
+
+	//set the counter
+	double n = (double)start;
+
 	while (n <= end) {
 
 		//run the function untill it is zero
@@ -33,6 +48,13 @@ int main(int argc, char* argv[]) {
 		n++;
 
 	}
+
+	//join the threads
+	if (pid == 0) {
+		return 0;
+	}
+	wait(&status);
+	
 
 	//end the clock
 	eclock = clock();
