@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 	sclock = clock();
 	
 	//start the correct number of threads
-	for (int i = 1; i < numFork; i++) {
+	for (int i = 1; i < numFork + 1; i++) {
 		int pid = fork();
 		if (pid == 0) {
 			if (collatz(i*((end - start)/(numFork+1)), (i+1)*((end - start)/(numFork+1))) != 0) {
