@@ -8,11 +8,11 @@
 
 int collatz(int start, int end) {
 	//set the counter
-	long int n = (long int)start;
+	long long int n = (long long int)start;
 	
 	while (n <= end) {
 		//run the function untill it is zero
-		long int mut = n;
+		long long int mut = n;
 		while (mut != 1 && !(start < mut && mut < n)) { // if the second condition is true then we know that it will work
 			if (mut % 2 == 0){
 	 			mut = mut / 2;
@@ -23,7 +23,7 @@ int collatz(int start, int end) {
 				printf("error: negative number");
 				return 1;
 			}
-			//printf("%lf\t%d\n",mut,(mut != 1));
+			printf("%llu\t%d\n",mut,(mut != 1));
 		}
 		n++;
 
