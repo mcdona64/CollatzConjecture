@@ -8,21 +8,21 @@
 
 int collatz(int start, int end) {
 	//set the counter
-	double n = (double)start;
+	long int n = (long int)start;
 	
 	while (n <= end) {
 		//run the function untill it is zero
-		double mut = n;
+		long int mut = n;
 		while (mut != 1 && !(start < mut && mut < n)) { // if the second condition is true then we know that it will work
-			if ((int)mut % 2 == 0){
+			if (mut % 2 == 0){
 	 			mut = mut / 2;
-			} else if ((int)mut % 2 == 1){
+			} else if (mut % 2 == 1){
 				mut = mut * 3 + 1;
 			}
 			if(mut < 1) {
 				return 1;
 			}
-			printf("%lf\t%d\n",mut,(mut != 1));
+			//printf("%lf\t%d\n",mut,(mut != 1));
 		}
 		n++;
 
