@@ -20,7 +20,7 @@ int collatz(int start, int end) {
 				mut = mut * 3 + 1;
 			}
 			if(mut < 1) {
-				printf("error: negative number");
+				printf("error: negative number s:%d e:%d\n",start, end);
 				return 1;
 			}
 			printf("%llu\t%d\n",mut,(mut != 1));
