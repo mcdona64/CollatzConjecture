@@ -44,11 +44,14 @@ int main(int argc, char* argv[]) {
 	int start = atoi(argv[1]);
 	int end = atoi(argv[2]);
 	int numFork = atoi(argv[3]);
-	clock_t sclock, eclock;
+	//clock_t sclock, eclock;
+	struct timespec s, f;
+	double time;
 	int status;
 
 	//start the clock to time the program
-	sclock = clock();
+	//sclock = clock();
+	clock_gettime(CLOCK_MONOTONIC, &s);
 	
 	//start the correct number of threads
 	for (int i = 1; i < numFork + 1; i++) {
@@ -71,9 +74,12 @@ int main(int argc, char* argv[]) {
 	}
 
 	//end the clock
-	eclock = clock();
-	double time = eclock - sclock;
-	time = time / (CLOCKS_PER_SEC/1000);
+	//eclock = clock();
+	clock_gettime(CLOCK_MONOTONIC, &f);
+	time = (f.tv_sec - s.tv_sec);
+	time += (f.tv_nsec - s.tv_nsec) / 1000000000.0;
+	//double time = eclock - sclock;
+	//time = time / (CLOCKS_PER_SEC/1000);
 
 	//print results to the screan and file
 	printf("it worked\n");
