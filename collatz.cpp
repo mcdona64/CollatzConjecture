@@ -13,7 +13,7 @@ int collatz(int start, int end) {
 	while (n <= end) {
 		//run the function untill it is zero
 		double mut = n;
-		while (mut != 1.0 && !(start < mut && mut < n)) { // if the second condition is true then we know that it will work
+		while (mut != 1 && !(start < mut && mut < n)) { // if the second condition is true then we know that it will work
 			if ((int)mut % 2 == 0){
 	 			mut = mut / 2;
 			} else if ((int)mut % 2 == 1){
@@ -22,7 +22,7 @@ int collatz(int start, int end) {
 			if(mut < 1) {
 				return 1;
 			}
-			printf("%lf\n",mut);
+			printf("%lf\t%b\n",mut,(mut != 1 && !(start < mut && mut < n)));
 		}
 		n++;
 
