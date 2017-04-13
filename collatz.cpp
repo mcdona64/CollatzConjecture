@@ -49,10 +49,10 @@ int main(int argc, char* argv[]) {
 	sclock = clock();
 	
 	//start the correct number of threads
-	for (int i = 0; i < numFork; i++) {
+	for (int i = 1; i < numFork; i++) {
 		int pid = fork();
 		if (pid == 0) {
-			if (collatz(i*((end - start)/numFork), (i+1)*((end - start)/numFork)) != 0) {
+			if (collatz(i*((end - start)/(numFork+1)), (i+1)*((end - start)/(numFork+1))) != 0) {
 				printf("error in fork\n");
 			}
 			return 0;		
