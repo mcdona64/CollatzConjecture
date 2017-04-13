@@ -33,7 +33,7 @@ int collatz(int start, int end) {
 int main(int argc, char* argv[]) {
 	//make sure that there was the correct numbers entered
 	if (argc < 4) {
-		printf("ussage error type the range of numbers you want to check");
+		printf("ussage error type the range of numbers you want to check and the number of threads\n");
 		return 0;
 	}
 	
@@ -46,21 +46,19 @@ int main(int argc, char* argv[]) {
 
 	//start the clock to time the program
 	sclock = clock();
-	int pid = fork();
-
-	//devide the work into two threads
-	if (pid == 0) {
-		collatz(start, end / 2);
-		
-	} else {
-		collatz(end / 2, end);
+	
+	//start the correct number of threads
+	for (int i = 0; i < numFork; i++) {
+		int pid = fork();
+		if (pid == 0) {
+			collatz(i*((start - end)/numFork), (i+1)*((start - end)/numFork));
+			return 0;		
+		} 
 	}
 
 	//join the threads
-	if (pid == 0) {
-		return 0;
-	}
-	wait(&status);
+	if (numFork > 0)
+		wait(&status);
 	
 
 	//end the clock
