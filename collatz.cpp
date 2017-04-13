@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
 	std::ofstream highscore;
 	highscore.open("highscores.txt", std::fstream::app);
 	highscore << "start: " << start << "\t|\tend: " << end << "\t|\t time: " 
-		<< (double)((eclock - sclock)/CLOCKS_PER_SEC) << "\t|\t Threads: "
+		<< (double)((eclock - sclock)/(CLOCKS_PER_SEC/1000)) << "\t|\t Threads: "
 		<< numFork << "\n";
 	highscore.close();
 	return 0;
