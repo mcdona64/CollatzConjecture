@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
 	for (int i = 0; i < numFork; i++) {
 		int pid = fork();
 		if (pid == 0) {
-			if (collatz(i*((start - end)/numFork), (i+1)*((start - end)/numFork)) != 0) {
+			if (collatz(i*((end - start)/numFork), (i+1)*((end - start)/numFork)) != 0) {
 				printf("error in fork\n");
 			}
 			return 0;		
