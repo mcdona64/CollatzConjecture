@@ -63,13 +63,15 @@ int main(int argc, char* argv[]) {
 
 	//end the clock
 	eclock = clock();
+	double time = eclock - sclock;
+	time = time / (CLOCKS_PER_SEC/1000);
 
 	//print results to the screan and file
 	printf("it worked\n");
 	std::ofstream highscore;
 	highscore.open("highscores.txt", std::fstream::app);
 	highscore << "start: " << start << "\t|\tend: " << end << "\t|\t time: " 
-		<< (double)((eclock - sclock)/(CLOCKS_PER_SEC/1000)) << "\t|\t Threads: "
+		<< time << "\t|\t Threads: "
 		<< numFork << "\n";
 	highscore.close();
 	return 0;
