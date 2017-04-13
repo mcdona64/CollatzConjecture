@@ -57,9 +57,11 @@ int main(int argc, char* argv[]) {
 	}
 
 	//join the threads
-	if (numFork > 0)
+	if (numFork > 0) {
 		wait(&status);
-	
+	} else {
+		collatz(start, end);
+	}
 
 	//end the clock
 	eclock = clock();

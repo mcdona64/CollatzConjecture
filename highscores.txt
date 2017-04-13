@@ -1,0 +1,12 @@
+______________________________________________________________________________________
+start: 1	|	end: 100000000	|	 time: 0.002	|	 Threads: 0
+start: 1	|	end: 10000000	|	 time: 0.001	|	 Threads: 0
+start: 1	|	end: 1000000	|	 time: 0.001	|	 Threads: 0
+start: 1	|	end: 100000	|	 time: 0.002	|	 Threads: 0
+start: 1	|	end: 10000	|	 time: 0.001	|	 Threads: 0
+start: 1	|	end: 1000000000	|	 time: 0.001	|	 Threads: 0
+start: 1	|	end: 1410065408	|	 time: 0.001	|	 Threads: 0
+start: 1	|	end: 1215752192	|	 time: 0.001	|	 Threads: 0
+start: 1	|	end: -727379968	|	 time: 0.002	|	 Threads: 0
+start: 1	|	end: -1530494976	|	 time: 0.002	|	 Threads: 0
+start: 1	|	end: 10000000	|	 time: 0.176	|	 Threads: 1
