@@ -19,11 +19,15 @@ int collatz(int start, int end) {
 			} else if ((int)mut % 2 == 1){
 				mut = mut * 3 + 1;
 			}
+			if(mut < 1) {
+				return 1;
+			}
 			printf("%d",mut);
 		}
 		n++;
 
 	}
+	return 0;
 }
 
 int main(int argc, char* argv[]) {
