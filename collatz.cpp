@@ -32,7 +32,7 @@ int collatz(int start, int end) {
 
 int main(int argc, char* argv[]) {
 	//make sure that there was the correct numbers entered
-	if (argc < 0) {
+	if (argc < 3) {
 		printf("ussage error type the range of numbers you want to check");
 		return 0;
 	}
@@ -40,6 +40,7 @@ int main(int argc, char* argv[]) {
 	//make nessicarly local variables 
 	int start = atoi(argv[1]);
 	int end = atoi(argv[2]);
+	int numFork = atoi(argv[3]);
 	clock_t sclock, eclock;
 	int status;
 
