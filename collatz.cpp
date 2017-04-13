@@ -22,7 +22,7 @@ int collatz(int start, int end) {
 			if(mut < 1) {
 				return 1;
 			}
-			printf("%lf\t%b\n",mut,(mut != 1 && !(start < mut && mut < n)));
+			printf("%lf\t%d\n",mut,(mut != 1 && !(start < mut && mut < n)));
 		}
 		n++;
 
