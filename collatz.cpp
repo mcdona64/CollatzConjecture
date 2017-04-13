@@ -6,6 +6,26 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+int collatz(int start, int end) {
+	//set the counter
+	double n = (double)start;
+	
+	while (n <= end) {
+		//run the function untill it is zero
+		double mut = n;
+		while (mut != 1 && !(start < mut && mut < n)) { // if the second condition is true then we know that it will work
+			if ((int)mut % 2 == 0){
+	 			mut = mut / 2;
+			} else if ((int)mut % 2 == 1){
+				mut = mut * 3 + 1;
+			}
+			printf("%d\n",mut);
+		}
+		n++;
+
+	}
+}
+
 int main(int argc, char* argv[]) {
 	//make sure that there was the correct numbers entered
 	if (argc < 0) {
@@ -25,29 +45,10 @@ int main(int argc, char* argv[]) {
 
 	//devide the work into two threads
 	if (pid == 0) {
-		end = end / 2;
+		collatz(start, end / 2);
 		
 	} else {
-		start = end / 2;
-	}
-
-	//set the counter
-	double n = (double)start;
-
-	while (n <= end) {
-
-		//run the function untill it is zero
-		double mut = n;
-		while (mut != 1 && !(start < mut && mut < n)) { // if the second condition is true then we know that it will work
-			if ((int)mut % 2 == 0){
-	 			mut = mut / 2;
-			} else if ((int)mut % 2 == 1){
-				mut = mut * 3 + 1;
-			}
-			printf("%d\n",mut);
-		}
-		n++;
-
+		collatz(end / 2, end);
 	}
 
 	//join the threads
