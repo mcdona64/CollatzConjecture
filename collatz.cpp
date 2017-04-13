@@ -25,7 +25,7 @@ int collatz(int start, int end) {
 				printf("error: negative number");
 				return 1;
 			}
-			printf("%llu\t%d\n",mut,(mut != 1));
+			//printf("%llu\t%d\n",mut,(mut != 1));
 		}
 		n++;
 
