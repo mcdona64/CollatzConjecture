@@ -44,6 +44,7 @@ int main(int argc, char* argv[]) {
 			} else if ((int)mut % 2 == 1){
 				mut = mut * 3 + 1;
 			}
+			printf("%d\n",mut);
 		}
 		n++;
 
