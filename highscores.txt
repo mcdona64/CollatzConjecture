@@ -1,0 +1,19 @@
+______________________________________________________________________________________
+start: 1	|	end: 10000000	|	 time: 275.507	|	 Threads: 0
+start: 1	|	end: 100000000	|	 time: 2240.87	|	 Threads: 0
+start: 1	|	end: 100000000	|	 time: 0.177	|	 Threads: 1
+start: 1	|	end: 100000000	|	 time: 0.271	|	 Threads: 2
+start: 1	|	end: 100000000	|	 time: 0.123	|	 Threads: 3
+start: 1	|	end: 500000000	|	 time: 11239.5	|	 Threads: 0
+start: 1	|	end: 500000000	|	 time: 0.181	|	 Threads: 1
+start: 1	|	end: 500000000	|	 time: 0.157	|	 Threads: 2
+start: 1	|	end: 500000000	|	 time: 0.318	|	 Threads: 3
+start: 1	|	end: 1000000000	|	 time: 22485.2	|	 Threads: 0
+start: 1	|	end: 1000000000	|	 time: 0.185	|	 Threads: 1
+start: 1	|	end: 1000000000	|	 time: 0.217	|	 Threads: 2
+start: 1	|	end: 1410065408	|	 time: 0.329	|	 Threads: 2
+start: 1	|	end: 1410065408	|	 time: 0.091	|	 Threads: 1
+start: 1	|	end: 1215752192	|	 time: 0.176	|	 Threads: 1
+start: 1	|	end: 1316134912	|	 time: 0.169	|	 Threads: 1
+start: 1	|	end: 1874919424	|	 time: 0.169	|	 Threads: 1
+start: 1	|	end: 1874919424	|	 time: 0.215	|	 Threads: 5
