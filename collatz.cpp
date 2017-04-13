@@ -19,7 +19,6 @@ int collatz(int start, int end) {
 			} else if ((int)mut % 2 == 1){
 				mut = mut * 3 + 1;
 			}
-			printf("%d\n",mut);
 		}
 		n++;
 
